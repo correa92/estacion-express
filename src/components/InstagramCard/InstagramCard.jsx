@@ -10,7 +10,7 @@ import imgND from "../../img/ND.png";
 export default function InstagramCard({ list }) {
 
   return list.map((evento) => {
-    console.log(evento);
+
     return (
       <Card
         sx={{ maxWidth: "48rem", m: "1rem" }}
