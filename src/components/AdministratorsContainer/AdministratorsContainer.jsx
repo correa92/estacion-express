@@ -6,6 +6,7 @@ import { db } from "../../fbConfig";
 import { useEffect, useState } from "react";
 import { useSnackbar } from "notistack";
 import { PulseLoader } from "react-spinners";
+import Spinner from "../Spinner/Spinner";
 
 export default function AdministratorsContainer() {
   const override = {
@@ -67,22 +68,7 @@ export default function AdministratorsContainer() {
         sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start" }}
       >
         {loading ? (
-          <Container
-            sx={{
-              display: "grid",
-              placeContent: "center",
-              height: "80vh",
-            }}
-          >
-            <PulseLoader
-              color="#1976d2"
-              loading={loading}
-              cssOverride={override}
-              size={20}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
-          </Container>
+          <Spinner/>
         ) : (
           <>
             {empty ? (
