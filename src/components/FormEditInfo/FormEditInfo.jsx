@@ -165,7 +165,7 @@ export default function FormEditInfo() {
               <Stack spacing="1.5rem">
                 <TextField
                   id="name"
-                  label="Título"
+                  label="Nombre"
                   name="name"
                   type="text"
                   value={event.name}

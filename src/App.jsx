@@ -12,6 +12,7 @@ import InfoContainer from "./components/InfoContainer/InfoContainer";
 import FormEditInfo from "./components/FormEditInfo/FormEditInfo";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import Home from "./components/Home/Home";
 function App() {
   return (
     <>
@@ -20,7 +21,7 @@ function App() {
           <SnackbarProvider maxSnack={5} autoHideDuration={5000}>
             <BrowserRouter>
               <Routes>
-                <Route path="/" element={<AdminContainer />}></Route>
+                <Route path="/" element={<Home />}></Route>
                 <Route path="/admin" element={<AdminContainer />}></Route>
                 <Route path="/login" element={<Login />}></Route>
                 <Route

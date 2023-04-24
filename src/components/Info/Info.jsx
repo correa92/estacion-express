@@ -9,10 +9,8 @@ import { useNavigate } from "react-router-dom";
 import imgND from "../../img/ND.png";
 import dayjs from "dayjs";
 
-
 export default function Info({ infoData }) {
-
-const fecha =dayjs(infoData[0].date).format("DD/MM/YYYY"); 
+  const fecha = dayjs(infoData[0].date).format("DD/MM/YYYY");
 
   const navigate = useNavigate();
   return (
@@ -32,7 +30,7 @@ const fecha =dayjs(infoData[0].date).format("DD/MM/YYYY");
             <Typography gutterBottom variant="h5" component="div">
               Nombre: {infoData[0].name}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body1">
               Descripción: {infoData[0].description}
             </Typography>
             <Divider sx={{ my: ".5rem" }} />

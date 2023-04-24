@@ -25,11 +25,6 @@ export default function Administrators({ userAdmin, fn }) {
   };
 
   return userAdmin.map((admin) => {
-    const fecha = admin.registeredTime.toDate();
-    // const anio = fecha.getFullYear();
-    // const mes = fecha.getMonth();
-    // const dia = fecha.getDay();
-
     return (
       <div
         key={admin.uid}
@@ -79,8 +74,7 @@ export default function Administrators({ userAdmin, fn }) {
               color="text.secondary"
               gutterBottom={true}
             >
-              {/* {`Creado: ${dia}/${mes}/${anio}`} */}
-              {`Creado: ${fecha}`}
+              {`Creado: ${admin.registeredTime}`}
             </Typography>
 
             <Stack spacing="1rem">

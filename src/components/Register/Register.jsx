@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import {
@@ -15,7 +15,8 @@ import { useNavigate } from "react-router-dom";
 import { sendEmailVerification } from "firebase/auth";
 import { auth, db } from "../../fbConfig";
 import { useSnackbar } from "notistack";
-import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
+import dayjs from "dayjs";
 
 export default function Register() {
   const [user, setUser] = useState({
@@ -65,7 +66,7 @@ export default function Register() {
       email: "",
       uid: "",
       rol: "",
-      registeredTime: serverTimestamp(),
+      registeredTime: dayjs().format("DD/MM/YYYY"),
       active: true,
       info: {
         name: "",
