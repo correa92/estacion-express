@@ -27,20 +27,20 @@ export default function Info({ infoData }) {
 
         <Grid item xs={12} md={6}>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Nombre: {infoData[0].name}
+            <Typography gutterBottom variant="body1" component="div">
+              {<strong>Nombre:</strong>} {infoData[0].name}
             </Typography>
             <Typography variant="body1">
-              Descripción: {infoData[0].description}
+              {<strong>Descripción:</strong>} {infoData[0].description}
             </Typography>
             <Divider sx={{ my: ".5rem" }} />
 
             <Typography gutterBottom variant="body1" component="div">
-              Inaguración: {fecha}
+              {<strong>Inaguración: </strong>}{fecha}
             </Typography>
 
             <Typography gutterBottom variant="body1" component="div">
-              Lugar origen:{" "}
+              {<strong>Lugar origen:</strong>}{" "}
               {infoData[0].birthplace === ""
                 ? "Sin definir"
                 : ` ${infoData[0].birthplace}`}

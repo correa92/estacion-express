@@ -13,6 +13,8 @@ import FormEditInfo from "./components/FormEditInfo/FormEditInfo";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Home from "./components/Home/Home";
+import ProductsContainer from "./components/ProductsContainer/ProductsContainer";
+import NewProduct from "./components/NewProduct/NewProduct";
 function App() {
   return (
     <>
@@ -24,6 +26,22 @@ function App() {
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/admin" element={<AdminContainer />}></Route>
                 <Route path="/login" element={<Login />}></Route>
+                <Route
+                  path="/admin/products"
+                  element={
+                    <AdminContainer>
+                      <ProductsContainer />
+                    </AdminContainer>
+                  }
+                ></Route>
+                <Route
+                  path="/admin/products/new_product"
+                  element={
+                    <AdminContainer>
+                      <NewProduct />
+                    </AdminContainer>
+                  }
+                ></Route>
                 <Route
                   path="/admin/administrators"
                   element={

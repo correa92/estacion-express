@@ -9,7 +9,7 @@ const firebaseConfig = {
   projectId: "estacion-express",
   storageBucket: "estacion-express.appspot.com",
   messagingSenderId: "568760590983",
-  appId: import.meta.env.VITE_APP_FB_APP_ID
+  appId: import.meta.env.VITE_FB_APP_ID
 };
 
 // Initialize Firebase

@@ -1,37 +1,58 @@
 import { Box, Button } from "@mui/material";
-import Administrators from "../Administrators/Administrators";
 import { useNavigate } from "react-router-dom";
-import { collection, query, getDocs, doc, deleteDoc } from "firebase/firestore";
-import { db } from "../../fbConfig";
+import {
+  collection,
+  query,
+  getDocs,
+  doc,
+  deleteDoc,
+  updateDoc,
+} from "firebase/firestore";
+import { db, storage } from "../../fbConfig";
 import { useEffect, useState } from "react";
 import { useSnackbar } from "notistack";
 import Spinner from "../Spinner/Spinner";
+import Product from "../Product/Product";
+import { deleteObject, ref } from "firebase/storage";
 
-export default function AdministratorsContainer() {
+export default function ProductsContainer() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [items, setItems] = useState([]);
   const [empty, setEmpty] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
+  const [reload, setReload] = useState(false);
 
   const handleNotistack = (message, variant) => {
     // default | error | success | warning | info
     enqueueSnackbar(message, { variant });
   };
 
-  const deleteUser = async (collection, uid) => {
+  const deleteProduct = async (collection, uid, id_Img) => {
     try {
       await deleteDoc(doc(db, collection, uid));
+      await deleteImg(collection, id_Img);
+
       const list = items.filter((e) => e.uid !== uid);
       setItems(list);
+      setReload(true);
       return handleNotistack("Se elimino correctamente!", "success");
     } catch (error) {
       return handleNotistack(error, "error");
     }
   };
 
+  const deleteImg = async (collection, id) => {
+    const imgRef = ref(storage, `${collection}/${id}`);
+    try {
+      await deleteObject(imgRef);
+    } catch (error) {
+      handleNotistack("No se pudo eliminar la imagen correctamente!", "error");
+    }
+  };
+
   useEffect(() => {
-    const filtro = query(collection(db, "administradores"));
+    const filtro = query(collection(db, "products"));
     getDocs(filtro)
       .then((doc) => {
         if (!doc.empty) {
@@ -42,19 +63,20 @@ export default function AdministratorsContainer() {
           });
           setItems(usuarios);
           setEmpty(false);
+          setReload(false);
         } else {
           setLoading(false);
           setEmpty(true);
         }
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [reload]);
 
   return (
     <Box component="div">
-      <h2>ADMINISTRADORES Y MODERADORES</h2>
-      <Button variant="contained" onClick={() => navigate("/register")}>
-        Agregar moderador
+      <h2>PRODUCTOS</h2>
+      <Button variant="contained" onClick={() => navigate("new_product")}>
+        Agregar producto
       </Button>
 
       <Box
@@ -66,9 +88,9 @@ export default function AdministratorsContainer() {
         ) : (
           <>
             {empty ? (
-              <h1>No se encontraron moderadores</h1>
+              <h1>No se encontraron productos</h1>
             ) : (
-              <Administrators userAdmin={items} fn={deleteUser} />
+              <Product productsList={items} fn={deleteProduct} />
             )}
           </>
         )}

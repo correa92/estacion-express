@@ -74,7 +74,8 @@ export default function Administrators({ userAdmin, fn }) {
               color="text.secondary"
               gutterBottom={true}
             >
-              {`Creado: ${admin.registeredTime}`}
+              {<strong>Creado: </strong>}
+              {admin.registeredTime}
             </Typography>
 
             <Stack spacing="1rem">
