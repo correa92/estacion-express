@@ -2,7 +2,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import {
   Button,
-  Container,
   Stack,
   Alert,
   FormControl,
@@ -10,7 +9,6 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
-import PulseLoader from "react-spinners/PulseLoader";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
@@ -19,18 +17,14 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useSnackbar } from "notistack";
 import { v4 } from "uuid";
 import dayjs from "dayjs";
+import Spinner from "../Spinner/Spinner";
 
 export default function NewProduct() {
-  const override = {
-    display: "block",
-    margin: "0 auto",
-    borderColor: "#1976d2",
-  };
   const acceptedFormats = {
     img1: "image/png",
     img2: "image/jpeg",
   };
-  const offerOption = [true,false];
+  const offerOption = [true, false];
 
   const categoryList = {
     category: [
@@ -47,7 +41,7 @@ export default function NewProduct() {
   };
 
   const [newCategory, setNewCategory] = useState("");
-  const [offer,setOffer] = useState("");
+  const [offer, setOffer] = useState("");
 
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
@@ -145,7 +139,7 @@ export default function NewProduct() {
         link_img: evento.link_img ? evento.link_img : "",
         id: "",
         idImg: idImg,
-        offer:offer,
+        offer: offer,
         post: true,
 
         category: newCategory,
@@ -166,7 +160,7 @@ export default function NewProduct() {
     navigate,
     idImg,
     newCategory,
-    offer
+    offer,
   ]);
 
   const handleSubmit = async (e) => {
@@ -178,22 +172,7 @@ export default function NewProduct() {
   return (
     <>
       {loading ? (
-        <Container
-          sx={{
-            display: "grid",
-            placeContent: "center",
-            height: "90vh",
-          }}
-        >
-          <PulseLoader
-            color="#1976d2"
-            loading={loading}
-            cssOverride={override}
-            size={20}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-        </Container>
+        <Spinner />
       ) : (
         <Box
           onSubmit={handleSubmit}

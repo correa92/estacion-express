@@ -9,12 +9,21 @@ import { useNavigate } from "react-router-dom";
 import imgND from "../../img/ND.png";
 import dayjs from "dayjs";
 
+const styleCard = {
+  "&:hover": {
+    "transition": ".5s .10s",
+    "scale":"1.01",
+    "boxShadow": "0px 18px 27px -7px rgba(0,0,0,0.75)"
+  },
+  maxWidth: "50rem",
+  m: "1rem",
+}; 
 export default function Info({ infoData }) {
   const fecha = dayjs(infoData[0].date).format("DD/MM/YYYY");
 
   const navigate = useNavigate();
   return (
-    <Card sx={{ maxWidth: "48rem", m: "1rem" }} data-aos="zoom-in">
+    <Card sx={styleCard} data-aos="zoom-in">
       <Grid container>
         <Grid item xs={12} md={6}>
           <CardMedia

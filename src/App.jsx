@@ -15,7 +15,10 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Home from "./components/Home/Home";
 import ProductsContainer from "./components/ProductsContainer/ProductsContainer";
 import NewProduct from "./components/NewProduct/NewProduct";
+import FormEditProduct from "./components/FormEditProduct/FormEditProduct";
+import Aos from "aos";
 function App() {
+  Aos.init();
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -43,6 +46,14 @@ function App() {
                   }
                 ></Route>
                 <Route
+                  path="/admin/products/product_edit/:idProduct"
+                  element={
+                    <AdminContainer>
+                      <FormEditProduct />
+                    </AdminContainer>
+                  }
+                ></Route>
+                <Route
                   path="/admin/administrators"
                   element={
                     <AdminContainer>
@@ -50,6 +61,7 @@ function App() {
                     </AdminContainer>
                   }
                 ></Route>
+                
                 <Route
                   path="/admin/administrators/user_edit/:idUser"
                   element={

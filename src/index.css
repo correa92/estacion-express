@@ -1,0 +1,9 @@
+const styleCard = {
+    "&:hover": {
+      "transition": ".5s .10s",
+      "scale":"1.05",
+      "boxShadow": "0px 18px 27px -7px rgba(0,0,0,0.75)"
+    },
+    maxWidth: "35rem",
+    m: "1rem",
+  };

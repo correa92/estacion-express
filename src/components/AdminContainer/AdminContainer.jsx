@@ -155,7 +155,7 @@ export default function AdminContainer({ children }) {
         <Divider />
 
         <List>
-          <ListItem
+          {/* <ListItem
             key="Promociones"
             disablePadding
             sx={{ display: "block" }}
@@ -172,7 +172,7 @@ export default function AdminContainer({ children }) {
                 sx={{ opacity: open ? 1 : 0 }}
               />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
           <ListItem
             key="Productos"
             disablePadding

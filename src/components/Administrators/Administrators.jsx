@@ -11,6 +11,16 @@ import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const styleCard = {
+  "&:hover": {
+    "transition": ".5s .10s",
+    "scale":"1.02",
+    "boxShadow": "0px 18px 27px -7px rgba(0,0,0,0.75)"
+  },
+  minWidth: "15rem",
+  m: "1rem",
+};
+
 export default function Administrators({ userAdmin, fn }) {
   const [open, setOpen] = useState(false);
   const [deleteUID, setDeleteUID] = useState("");
@@ -32,7 +42,7 @@ export default function Administrators({ userAdmin, fn }) {
         data-aos-duration="1000"
         data-aos-easing="ease-in-sine"
       >
-        <Card sx={{ m: "1rem", minWidth: "15rem" }}>
+        <Card sx={styleCard}>
           <CardHeader
             avatar={
               <Avatar
