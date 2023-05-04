@@ -5,7 +5,7 @@ export default function Spinner() {
     const override = {
         display: "block",
         margin: "0 auto",
-        borderColor: "#1976d2",
+        borderColor: "#FE6A2C",
       };
   return (
     <Container
@@ -16,7 +16,7 @@ export default function Spinner() {
             }}
           >
             <PulseLoader
-              color="#1976d2"
+              color="#FE6A2C"
               cssOverride={override}
               size={20}
               aria-label="Loading Spinner"

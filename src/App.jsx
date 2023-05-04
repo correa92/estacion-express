@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import { AuthProvider } from "./context/authContext";
 import AdminContainer from "./components/AdminContainer/AdminContainer";
 import AdministratorsContainer from "./components/AdministratorsContainer/AdministratorsContainer";
@@ -12,13 +11,18 @@ import InfoContainer from "./components/InfoContainer/InfoContainer";
 import FormEditInfo from "./components/FormEditInfo/FormEditInfo";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import Home from "./components/Home/Home";
 import ProductsContainer from "./components/ProductsContainer/ProductsContainer";
 import NewProduct from "./components/NewProduct/NewProduct";
 import FormEditProduct from "./components/FormEditProduct/FormEditProduct";
 import Aos from "aos";
+import NavBar from "./components/Header/NavBar/NavBar";
+import InicioContainer from "./components/Main/InicioContainer/InicioContainer";
 function App() {
   Aos.init();
+
+  
+
+
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -26,9 +30,42 @@ function App() {
           <SnackbarProvider maxSnack={5} autoHideDuration={5000}>
             <BrowserRouter>
               <Routes>
-                <Route path="/" element={<Home />}></Route>
-                <Route path="/admin" element={<AdminContainer />}></Route>
-                <Route path="/login" element={<Login />}></Route>
+                <Route
+                  path="/"
+                  element={
+                    <>
+                      <header>
+                        <NavBar />
+                      </header>
+                      <main>
+                        <section>
+                          <InicioContainer/>
+                        </section>
+                        <section>
+                          <h1>DISFRUTA EL SABOR DE NUESTRAS ESPECIALIDADES</h1>
+                        </section>
+                        <section>
+                          <h1>DESAYUNOS Y MERIENDAS</h1>
+                        </section>
+                        <section>
+                          <h1>VIANDAS/MENÚ DIARIO</h1>
+                        </section>
+                        <section>
+                          <h1>SANDWICHS</h1>
+                        </section>
+                        <section>
+                          <h1>SEGUINOS EN INSTAGRAM</h1>
+                        </section>
+                      </main>
+                      <footer>
+                        <h1>footer</h1>
+                      </footer>
+                    </>
+                  }
+                ></Route>
+
+                <Route path="/admin" element={<AdminContainer />} />
+                <Route path="/login" element={<Login />} />
                 <Route
                   path="/admin/products"
                   element={
@@ -61,7 +98,7 @@ function App() {
                     </AdminContainer>
                   }
                 ></Route>
-                
+
                 <Route
                   path="/admin/administrators/user_edit/:idUser"
                   element={
