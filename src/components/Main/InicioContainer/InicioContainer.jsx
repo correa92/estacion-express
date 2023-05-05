@@ -64,9 +64,7 @@ export default function InicioContainer() {
 
           <div
             className="container_title"
-            data-aos="zoom-in-down"
-            data-aos-offset="400"
-            data-aos-easing="ease-in-sine"
+            data-aos="zoom-out-up"
           >
             <div className="container_title-items">
               <h3>HACE TU PEDIDO</h3>

@@ -15,8 +15,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-const drawerWidth = 240;
+const drawerWidth = 250;
 const navItems = [
+  { name: "Home", path: "/#home" },
   { name: "Nosotros", path: "/#nosotros" },
   { name: "Menú", path: "/#menu" },
   { name: "Contacto", path: "/#contacto" },
@@ -25,14 +26,30 @@ const navItems = [
 const buttonStyle = {
   "&:hover": {
     color: "#FE6A2C",
+    background: "var(--color-black)",
   },
   "&:focus": {
-    boxShadow:" 0px 1px 0px 0px #FE6A2C"
+    boxShadow: " 0px 1px 0px 0px #FE6A2C",
   },
-  color: "#fffeFe",
+  color: "#fff",
   fontFamily: "var(--font-subtitle)",
-  fontSize: "20px",
+  fontSize: "22px",
   marginRight: "7rem",
+};
+
+const buttonStyleResponsive = {
+  "&:hover": {
+    color: "#FE6A2C",
+    background: "var(--color-black)",
+  },
+  "&:focus": {
+    boxShadow: " 0px 1px 0px 0px #FE6A2C",
+  },
+  "& .MuiTypography-root": {
+    fontSize: "1.2rem",
+    fontFamily: "var(--font-subtitle)",
+  },
+  color: "#fff",
 };
 
 function NavBar(props) {
@@ -54,20 +71,18 @@ function NavBar(props) {
           fontFamily: "var(--font-subtitle)",
           fontWeight: "500",
           color: "#fff",
+          fontSize: "1.2rem",
         }}
       >
         ESTACIÓN Express
       </Typography>
-      
+
       <Divider sx={{ background: "#FE6A2C" }} />
       <List>
         {navItems.map((item) => (
           <ListItem key={item.name} disablePadding>
-            <ListItemButton
-              sx={{ textAlign: "center", color: "#fff" }}
-              href={item.path}
-            >
-              <ListItemText primary={item.name} />
+            <ListItemButton href={item.path} sx={{ textAlign: "center" }}>
+              <ListItemText primary={item.name} sx={buttonStyleResponsive} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -82,7 +97,7 @@ function NavBar(props) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ boxShadow: "0 0 0" }}>
-        <Toolbar sx={{ background: "#1f1f1f", paddingTop:"1rem" }}>
+        <Toolbar sx={{ background: "#1f1f1f", paddingTop: "1.5rem" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -102,6 +117,9 @@ function NavBar(props) {
               display: { xs: "none", sm: "block" },
               fontFamily: "var(--font-subtitle)",
               fontSize: "30px",
+              "&:hover": {
+                cursor: "pointer",
+              },
             }}
           >
             ESTACIÓN Express
@@ -109,12 +127,15 @@ function NavBar(props) {
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Button sx={buttonStyle} href={navItems[0].path}>
-              Nosotros
+              Home
             </Button>
             <Button sx={buttonStyle} href={navItems[1].path}>
-              Menú
+              Nosotros
             </Button>
             <Button sx={buttonStyle} href={navItems[2].path}>
+              Menú
+            </Button>
+            <Button sx={buttonStyle} href={navItems[3].path}>
               Contacto
             </Button>
           </Box>
@@ -133,6 +154,7 @@ function NavBar(props) {
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
+              background: "var(--color-black)",
               width: drawerWidth,
             },
           }}

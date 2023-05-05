@@ -1,6 +1,6 @@
 :root {
-  --font-title: Bebas Neue, cursive;
-  --font-subtitle: Montserrat, sans-serif;
+  --font-title: Bebas Neue, cursive !important;
+  --font-subtitle: Montserrat, sans-serif !important;
   
   --font-medium: 500;
   --font-regular: 400;
