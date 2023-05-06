@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Divider, Grid } from "@mui/material";
 
-import imgND from "../../img/ND.png";
+import imgND from "../../../img/ND.png";
 
 export default function InstagramCard({ list }) {
 

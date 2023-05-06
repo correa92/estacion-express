@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import InstagramCard from "../InstagramCard/InstagramCard";
 
-export default function Home() {
+export default function InstagramContainer() {
   const [publications, setPublications] = useState([]);
 
   useEffect(() => {
