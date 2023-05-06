@@ -1,0 +1,8 @@
+.container_acerca {
+    background-color: var(--color-white);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  

@@ -17,6 +17,7 @@ import FormEditProduct from "./components/FormEditProduct/FormEditProduct";
 import Aos from "aos";
 import NavBar from "./components/Header/NavBar/NavBar";
 import InicioContainer from "./components/Main/InicioContainer/InicioContainer";
+import AcercaContainer from "./components/Main/AcercaContainer/AcercaContainer";
 function App() {
   Aos.init();
 
@@ -42,6 +43,7 @@ function App() {
                           <InicioContainer/>
                         </section>
                         <section>
+                          <AcercaContainer/>
                           <h1>DISFRUTA EL SABOR DE NUESTRAS ESPECIALIDADES</h1>
                         </section>
                         <section>
