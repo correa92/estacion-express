@@ -84,6 +84,11 @@
   font-size: 19px !important;
 }
 
+.item_acerca-text h4 b{
+  font-size: 20.5px !important;
+  font-weight: 500
+}
+
 @media (min-width: 1200px) {
   .acerca_items {
     flex-direction: row;
@@ -102,8 +107,14 @@
 
   .item_acerca-title {
     width: 100%;
-    &h3 {
-      font-size: 64px !important;
-    }
   }
+
+  .item_acerca-title h3{
+      font-size: 64px !important;
+  }
+
+  .instagram_subtitle{
+    display: flex;
+  }
+  
 }

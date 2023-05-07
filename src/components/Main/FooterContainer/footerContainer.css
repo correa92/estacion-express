@@ -1,0 +1,31 @@
+.footer_container{
+    background-color: var(--color-black);
+    display: relative;
+    margin: 0 auto;
+    height: 80px
+}
+
+.footer_body{
+    margin-left: 3rem;
+    padding: 1rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.footer_tier_logos{
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer_logo{
+    padding: 0.5rem;
+}
+
+.footer_text{
+    width: 100%;
+    color: var(--color-white);
+    font-size: 20.5px !important;
+}

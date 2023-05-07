@@ -29,6 +29,7 @@
   color: var(--color-orange);
   font-weight: 500;
   margin: 0;
+  text-align: left;
 }
 
 .container_img {
