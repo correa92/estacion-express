@@ -17,7 +17,6 @@ import FormEditProduct from "./components/FormEditProduct/FormEditProduct";
 import Aos from "aos";
 import NavBar from "./components/Main/NavBar/NavBar";
 import InicioContainer from "./components/Main/InicioContainer/InicioContainer";
-import MenuMainContainer from "./components/Main/MenuMainContainer/MenuMainContainer";
 import Main from "./components/Main/Main";
 
 function App() {

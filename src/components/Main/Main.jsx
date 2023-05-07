@@ -1,6 +1,7 @@
 import InicioContainer from "./InicioContainer/InicioContainer";
 import MenuMainContainer from "./MenuMainContainer/MenuMainContainer";
 import NavBar from "./NavBar/NavBar";
+import AcercaContainer from "./AcercaContainer/AcercaContainer";
 
 export default function Main() {
   return (
@@ -11,6 +12,9 @@ export default function Main() {
       <main>
         <section>
           <InicioContainer />
+        </section>
+        <section>
+          <AcercaContainer />
         </section>
         <section>
           <MenuMainContainer />
