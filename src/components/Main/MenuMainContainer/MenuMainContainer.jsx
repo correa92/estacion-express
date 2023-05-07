@@ -1,59 +1,116 @@
 import "./menuMainContainer.css";
-import { Carousel } from "@trendyol-js/react-carousel";
-import img1 from "../../../img/bebidas/1366_2000.jpg";
-import img2 from "../../../img/cafeteria/cocinillas_193495389_116293001_1706x960.jpg";
-import img3 from "../../../img/comidas/comida-rapida-casera.jpg";
-import img4 from "../../../img/ensaladas/ensaladas-para-almuerzo-1200x720.jpg";
-import img5 from "../../../img/jugos frutales/1140-limofresa-gas-drink-esp.jpg";
-import img6 from "../../../img/lacteos/caserio-7-2022.jpg";
-import MenuCard from "../MenuCard/MenuCard";
+import { collection, getDocs, query } from "firebase/firestore";
+import { db } from "../../../fbConfig";
+import { useEffect, useState } from "react";
 
-export default function MenuMainContainer({ subtitle }) {
+import MenuMain from "../MenuMain/MenuMain";
+import Spinner from "../../Spinner/Spinner";
+
+export default function MenuMainContainer() {
+  const [loading, setLoading] = useState(true);
+  const [panificadosCafeteria, setPanificadosCafeteria] = useState([]);
+  const [bebidasJugosFrutales, setBebidasJugosFrutales] = useState([]);
+  const [lacteosPostres, setLacteosPostres] = useState([]);
+  const [comidasSnaks, setComidasSnaks] = useState([]);
+  const [ensaladasSandwich, setEnsaladasSandwich] = useState([]);
+
+  useEffect(() => {
+    const filtro = query(collection(db, "products"));
+    getDocs(filtro)
+      .then((doc) => {
+        if (!doc.empty) {
+          const productos = doc.docs.map((documento) => {
+            const document = { ...documento.data() };
+            setLoading(false);
+            return document;
+          });
+
+          const panificados = productos.filter(
+            (prod) =>
+              (prod.category == "PANIFICADOS" ||
+                prod.category == "CAFETERÍA") &&
+              prod.post === true
+          );
+          
+          setPanificadosCafeteria(panificados);
+
+          const bebidas = productos.filter(
+            (prod) =>
+              (prod.category == "BEBIDAS" ||
+                prod.category == "JUGOS FRUTALES") &&
+              prod.post === true
+          );
+          setBebidasJugosFrutales(bebidas);
+
+          const lacteos = productos.filter(
+            (prod) =>
+              (prod.category == "LÁCTEOS" || prod.category == "POSTRES") &&
+              prod.post === true
+          );
+          setLacteosPostres(lacteos);
+
+          const comidas = productos.filter(
+            (prod) =>
+              (prod.category == "COMIDAS" || prod.category == "SNAKS") &&
+              prod.post === true
+          );
+          setComidasSnaks(comidas);
+
+          const ensaladas = productos.filter(
+            (prod) =>
+              (prod.category == "ENSALADAS" || prod.category == "SANDWICHS") &&
+              prod.post === true
+          );
+          setEnsaladasSandwich(ensaladas);
+        } else {
+          setLoading(false);
+        }
+      })
+      .catch((e) => console.log(e));
+  }, []);
+
   return (
-    <div className="containerMenuMain">
+    <>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <div className="containerMenuMain">
+            <h2>Panificados / Cafetería</h2>
+            <div className="containerMenu">
+              <MenuMain list={panificadosCafeteria} />
+            </div>
+          </div>
 
-        <h2>{subtitle}</h2>
+          <div className="containerMenuMain">
+            <h2>Bebídas / Jugos Frutales</h2>
+            <div className="containerMenu">
+              <MenuMain list={bebidasJugosFrutales} />
+            </div>
+          </div>
 
-      <div className="containerMenu">
-        <Carousel
-          show={3.5}
-          slide={3}
-          transition={1}
-          swiping={true}
-          responsive={true}
-        >
-          <MenuCard
-            url={img1}
-            subtitle={"BEBÍDAS"}
-            description={"Infusion con 2 medialunas dulces o saladas"}
-          />
-          <MenuCard
-            url={img2}
-            subtitle={"DESAYUNO"}
-            description={"Infusion con 2 medialunas dulces o saladas"}
-          />
-          <MenuCard
-            url={img3}
-            subtitle={"COMIDAS"}
-            description={"Infusion con 2 medialunas dulces o saladas"}
-          />
-          <MenuCard
-            url={img4}
-            subtitle={"ENSALADAS"}
-            description={"Infusion con 2 medialunas dulces o saladas"}
-          />
-          <MenuCard
-            url={img5}
-            subtitle={"JUGOS FRUTALES"}
-            description={"Infusion con 2 medialunas dulces o saladas"}
-          />
-          <MenuCard
-            url={img6}
-            subtitle={"LACTEOS"}
-            description={"Infusion con 2 medialunas dulces o saladas"}
-          />
-        </Carousel>
-      </div>
-    </div>
+          <div className="containerMenuMain">
+            <h2>Lácteos / Postres</h2>
+            <div className="containerMenu">
+              <MenuMain list={lacteosPostres} />
+            </div>
+          </div>
+
+          <div className="containerMenuMain">
+            <h2>Comidas / Snaks</h2>
+            <div className="containerMenu">
+              <MenuMain list={comidasSnaks} />
+            </div>
+          </div>
+
+          <div className="containerMenuMain">
+            <h2>Sandwichs / Ensaladas</h2>
+            <div className="containerMenu">
+              <MenuMain list={ensaladasSandwich} />
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 }

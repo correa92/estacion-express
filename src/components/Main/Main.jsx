@@ -17,16 +17,7 @@ export default function Main() {
           <AcercaContainer />
         </section>
         <section>
-          <MenuMainContainer subtitle={"Desayunos y Meriendas"} />
-        </section>
-        <section>
-          <h1>DESAYUNOS Y MERIENDAS</h1>
-        </section>
-        <section>
-          <h1>VIANDAS/MENÚ DIARIO</h1>
-        </section>
-        <section>
-          <h1>SANDWICHS</h1>
+          <MenuMainContainer />
         </section>
         <section>
           <h1>SEGUINOS EN INSTAGRAM</h1>

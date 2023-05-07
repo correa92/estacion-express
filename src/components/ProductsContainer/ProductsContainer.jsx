@@ -1,13 +1,6 @@
 import { Box, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import {
-  collection,
-  query,
-  getDocs,
-  doc,
-  deleteDoc,
-  updateDoc,
-} from "firebase/firestore";
+import { collection, query, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { db, storage } from "../../fbConfig";
 import { useEffect, useState } from "react";
 import { useSnackbar } from "notistack";

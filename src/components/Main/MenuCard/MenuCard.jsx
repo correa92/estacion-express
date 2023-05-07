@@ -2,7 +2,7 @@ import "./menuCard.css";
 
 export default function MenuCard({ url, subtitle, description }) {
   return (
-    <div className="containerCard" data-aos="fade-down">
+    <div className="containerCard">
       <picture className="containerCard-img">
         <img src={url} alt="" title="" />
       </picture>
