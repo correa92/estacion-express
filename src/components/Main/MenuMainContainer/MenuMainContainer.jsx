@@ -1,5 +1,5 @@
 import "./menuMainContainer.css";
-import { Carousel } from '@trendyol-js/react-carousel';
+import { Carousel } from "@trendyol-js/react-carousel";
 import img1 from "../../../img/bebidas/1366_2000.jpg";
 import img2 from "../../../img/cafeteria/cocinillas_193495389_116293001_1706x960.jpg";
 import img3 from "../../../img/comidas/comida-rapida-casera.jpg";
@@ -8,35 +8,51 @@ import img5 from "../../../img/jugos frutales/1140-limofresa-gas-drink-esp.jpg";
 import img6 from "../../../img/lacteos/caserio-7-2022.jpg";
 import MenuCard from "../MenuCard/MenuCard";
 
-export default function MenuMainContainer() {
+export default function MenuMainContainer({ subtitle }) {
   return (
     <div className="containerMenuMain">
-      <h2>DISFRUTA EL SABOR DE NUESTRAS ESPECIALIDADES</h2>
+
+        <h2>{subtitle}</h2>
+
       <div className="containerMenu">
-        <MenuCard url={img1} subtitle={"Bebidas"}/>
-        
-        <Carousel show={3} slide={3} transition={1}  responsive={true} swiping={true} rightArrow={false} leftArrow={false}>
-
-        <MenuCard url={img2} subtitle={"Cafetería"}/>
-
-        <div className="containerImg">
-          <h4>Almuerzo/Cena</h4>
-          <img src={img3} alt="" title="" className="img" />
-        </div>
-        <div className="containerImg">
-          <h4>Ensaladas</h4>
-          <img src={img4} alt="" title="" className="img" />
-        </div>
-        <div className="containerImg">
-          <h4>Jugos frutales</h4>
-          <img src={img5} alt="" title="" className="img" />
-        </div>
-        <div className="containerImg">
-          <h4>Lacteos</h4>
-          <img src={img6} alt="" title="" className="img" />
-        </div>
+        <Carousel
+          show={3.5}
+          slide={3}
+          transition={1}
+          swiping={true}
+          responsive={true}
+        >
+          <MenuCard
+            url={img1}
+            subtitle={"BEBÍDAS"}
+            description={"Infusion con 2 medialunas dulces o saladas"}
+          />
+          <MenuCard
+            url={img2}
+            subtitle={"DESAYUNO"}
+            description={"Infusion con 2 medialunas dulces o saladas"}
+          />
+          <MenuCard
+            url={img3}
+            subtitle={"COMIDAS"}
+            description={"Infusion con 2 medialunas dulces o saladas"}
+          />
+          <MenuCard
+            url={img4}
+            subtitle={"ENSALADAS"}
+            description={"Infusion con 2 medialunas dulces o saladas"}
+          />
+          <MenuCard
+            url={img5}
+            subtitle={"JUGOS FRUTALES"}
+            description={"Infusion con 2 medialunas dulces o saladas"}
+          />
+          <MenuCard
+            url={img6}
+            subtitle={"LACTEOS"}
+            description={"Infusion con 2 medialunas dulces o saladas"}
+          />
         </Carousel>
-        
       </div>
     </div>
   );
