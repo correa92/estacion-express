@@ -5,4 +5,33 @@
     grid-template-columns: 1fr;
   }
 
+.acerca_items-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+
+.acerca_items{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 20px;
+}
+
+.item_acerca img{
+  place-items: center;
+  display: grid;
+  width: auto;
+  height: 200px;
+}
+
+@media (min-width: 1200px) {
+  .acerca_items{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .item_acerca img{
+    width: auto;
+    height: 500px;
+  }
+}
   
