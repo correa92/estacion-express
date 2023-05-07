@@ -17,10 +17,14 @@
   margin: 20px;
 }
 
-.item_acerca img{
-  place-items: center;
-  display: grid;
+.item_acerca{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
+}
+
+.item_acerca img{
   height: 200px;
 }
 
