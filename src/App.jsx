@@ -17,12 +17,11 @@ import FormEditProduct from "./components/FormEditProduct/FormEditProduct";
 import Aos from "aos";
 import NavBar from "./components/Main/NavBar/NavBar";
 import InicioContainer from "./components/Main/InicioContainer/InicioContainer";
+import MenuMainContainer from "./components/Main/MenuMainContainer/MenuMainContainer";
+import Main from "./components/Main/Main";
 
 function App() {
   Aos.init();
-
-  
-
 
   return (
     <>
@@ -31,39 +30,7 @@ function App() {
           <SnackbarProvider maxSnack={5} autoHideDuration={5000}>
             <BrowserRouter>
               <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <>
-                      <header>
-                        <NavBar />
-                      </header>
-                      <main>
-                        <section>
-                          <InicioContainer/>
-                        </section>
-                        <section>
-                          <h1>DISFRUTA EL SABOR DE NUESTRAS ESPECIALIDADES</h1>
-                        </section>
-                        <section>
-                          <h1>DESAYUNOS Y MERIENDAS</h1>
-                        </section>
-                        <section>
-                          <h1>VIANDAS/MENÚ DIARIO</h1>
-                        </section>
-                        <section>
-                          <h1>SANDWICHS</h1>
-                        </section>
-                        <section>
-                          <h1>SEGUINOS EN INSTAGRAM</h1>
-                        </section>
-                      </main>
-                      <footer>
-                        <h1>footer</h1>
-                      </footer>
-                    </>
-                  }
-                ></Route>
+                <Route path="/" element={<Main />}></Route>
 
                 <Route path="/admin" element={<AdminContainer />} />
                 <Route path="/login" element={<Login />} />

@@ -1,0 +1,35 @@
+
+.containerMenuMain{
+    background: url("https://firebasestorage.googleapis.com/v0/b/estacion-express.appspot.com/o/background%2Ftexture-1027806_1920.jpg?alt=media&token=86478ca0-4e31-4c6a-8d0d-da82c83ef413");
+    height: 100vh;
+    background-size: cover;
+}
+
+h2{
+    color: var(--color-orange);
+    font-family: var(--font-subtitle);
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 1rem;
+}
+
+h4{
+    color: var(--color-orange);
+    font-family: var(--font-subtitle);
+    text-align: center;
+}
+
+.containerImg img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    background-color: aqua;
+}
+
+
+/* 
+@media (min-width: 1200px) {
+    
+
+} */
