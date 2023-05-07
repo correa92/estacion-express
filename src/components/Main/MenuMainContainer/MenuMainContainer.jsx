@@ -75,7 +75,7 @@ export default function MenuMainContainer() {
         <Spinner />
       ) : (
         <>
-          <div className="containerMenuMain">
+          <div className="containerMenuMain" id="menu">
             <h2>Panificados / Cafetería</h2>
             <div className="containerMenu">
               <MenuMain list={panificadosCafeteria} />

@@ -2,7 +2,7 @@ import "./acercaContainer.css";
 
 const AcercaContainer = () => {
   return (
-    <div className="container_acerca" data-aos="fade-down">
+    <div className="container_acerca" data-aos="fade-down" id="nosotros">
       <div className="acerca_items-container">
         <div className="acerca_items">
           <div className="item_acerca">

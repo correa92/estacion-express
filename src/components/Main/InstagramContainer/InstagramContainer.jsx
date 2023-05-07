@@ -25,13 +25,12 @@ const InstagramContainer = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  console.log(publications);
 
   if (isLoading) {
     return <Spinner />;
   } else {
     return (
-      <div className="instagram_container" data-aos="fade-down">
+      <div className="instagram_container" data-aos="fade-down" id="contacto">
         <div className="instagram_items">
           <div className="instagram_header">
             <div className="instagram_title">
@@ -50,7 +49,7 @@ const InstagramContainer = () => {
           <div className="instagram_body">
             <div className="instagram_cards">
               {publications.map((card) => (
-                <div id={card.id} className="instagram_card">
+                <div id={card.id} key={card.id} className="instagram_card">
                   <a href={card.permalink}>
                     {" "}
                     <img src={card.media_url} alt="" />
