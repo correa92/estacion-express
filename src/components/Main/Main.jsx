@@ -22,11 +22,11 @@ export default function Main() {
           <MenuMainContainer />
         </section>
         <section>
-          <InstagramContainer/>
+          <InstagramContainer />
         </section>
       </main>
       <footer>
-        <FooterContainer/>
+        <FooterContainer />
       </footer>
     </div>
   );

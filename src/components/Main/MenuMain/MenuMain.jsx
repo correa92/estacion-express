@@ -1,6 +1,7 @@
 import { Carousel } from "@trendyol-js/react-carousel";
 import MenuCard from "../MenuCard/MenuCard";
 import { useEffect, useState } from "react";
+import Buttom from "../Buttom/Buttom";
 
 export default function MenuMain({ list }) {
   const [columnCard, setColumnCard] = useState(window.innerWidth < 720 ? 1 : 3);
@@ -32,12 +33,13 @@ export default function MenuMain({ list }) {
   return (
     <Carousel
       show={columnCard}
-      slide={columnCard}
+      slide={1}
       transition={1}
-      swiping={true}
+      // swiping={true}
       responsive={true}
       dynamic={true}
-      useArrowKeys={true}
+      rightArrow={<Buttom direction="rigth"/>}
+      leftArrow={<Buttom direction="left"/>}
     >
       {list.map((product) => {
         return (
