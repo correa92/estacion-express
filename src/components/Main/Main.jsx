@@ -2,6 +2,7 @@ import InicioContainer from "./InicioContainer/InicioContainer";
 import MenuMainContainer from "./MenuMainContainer/MenuMainContainer";
 import NavBar from "./NavBar/NavBar";
 import AcercaContainer from "./AcercaContainer/AcercaContainer";
+import "./main.css"
 
 export default function Main() {
   return (
@@ -9,7 +10,7 @@ export default function Main() {
       <header>
         <NavBar />
       </header>
-      <main>
+      <main className="main_container">
         <section>
           <InicioContainer />
         </section>
