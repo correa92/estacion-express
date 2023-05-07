@@ -2,6 +2,9 @@ import InicioContainer from "./InicioContainer/InicioContainer";
 import MenuMainContainer from "./MenuMainContainer/MenuMainContainer";
 import NavBar from "./NavBar/NavBar";
 import AcercaContainer from "./AcercaContainer/AcercaContainer";
+import InstagramContainer from "./InstagramContainer/InstagramContainer";
+import FooterContainer from "./FooterContainer/FooterContainer";
+import "./main.css"
 
 export default function Main() {
   return (
@@ -9,7 +12,7 @@ export default function Main() {
       <header>
         <NavBar />
       </header>
-      <main>
+      <main className="main_container">
         <section>
           <InicioContainer />
         </section>
@@ -20,11 +23,11 @@ export default function Main() {
           <MenuMainContainer />
         </section>
         <section>
-          <h1>SEGUINOS EN INSTAGRAM</h1>
+          <InstagramContainer/>
         </section>
       </main>
       <footer>
-        <h1>footer</h1>
+        <FooterContainer/>
       </footer>
     </div>
   );

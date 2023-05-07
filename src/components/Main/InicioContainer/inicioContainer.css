@@ -1,7 +1,7 @@
 .container_inicio {
   background-color: var(--color-black);
-  height: 100vh;
   display: grid;
+  height: 100vh;
   grid-template-columns: 1fr;
 }
 
@@ -29,6 +29,7 @@
   color: var(--color-orange);
   font-weight: 500;
   margin: 0;
+  text-align: left;
 }
 
 .container_img {

@@ -15,8 +15,6 @@ import ProductsContainer from "./components/ProductsContainer/ProductsContainer"
 import NewProduct from "./components/NewProduct/NewProduct";
 import FormEditProduct from "./components/FormEditProduct/FormEditProduct";
 import Aos from "aos";
-import NavBar from "./components/Main/NavBar/NavBar";
-import InicioContainer from "./components/Main/InicioContainer/InicioContainer";
 import Main from "./components/Main/Main";
 
 function App() {
