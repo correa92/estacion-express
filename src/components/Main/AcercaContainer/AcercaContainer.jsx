@@ -1,4 +1,3 @@
-import React from "react";
 import "./acercaContainer.css";
 
 const AcercaContainer = () => {

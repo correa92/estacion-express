@@ -15,6 +15,7 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.1",
     "@mui/x-date-pickers": "^6.2.1",
+    "@trendyol-js/react-carousel": "^3.0.2",
     "aos": "^2.3.4",
     "dayjs": "^1.11.7",
     "firebase": "^9.20.0",
