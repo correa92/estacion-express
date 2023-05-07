@@ -4,7 +4,6 @@ import NavBar from "./NavBar/NavBar";
 import AcercaContainer from "./AcercaContainer/AcercaContainer";
 import InstagramContainer from "./InstagramContainer/InstagramContainer";
 import FooterContainer from "./FooterContainer/FooterContainer";
-import "./main.css"
 
 export default function Main() {
   return (

@@ -21,7 +21,7 @@ export default function InstagramCard({ list }) {
           <Grid item xs={12} md={6}>
             <CardMedia
               component="img"
-              sx={{ maxHeight: "25rem", minWidth: "15rem" }}
+              sx={{ maxHeight: "25rem" }}
               image={evento.media_url !== "" ? evento.media_url : imgND}
               alt={evento.username}
             />

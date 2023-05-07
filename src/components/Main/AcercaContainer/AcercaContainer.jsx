@@ -4,17 +4,22 @@ const AcercaContainer = () => {
   return (
     <div className="container_acerca" data-aos="fade-down" id="nosotros">
       <div className="acerca_items-container">
+
         <div className="acerca_items">
+
           <div className="item_acerca">
             <img
-              src="../../src/img/acerca_imagenes/imagen-ejemplo.jpg"
+              src="../../src/img/acerca_imagenes/WhatsApp Image 2023-05-01 at 19.47.09.jpeg"
               alt=""
             />
           </div>
+
           <div className="item_acerca">
+
             <div className="item_acerca-title">
               <h3>ACERCA DE NOSOTROS</h3>
             </div>
+            
             <div className="item_acerca-text">
               <h4>
                 Somos una empresa familiar apasionados por la gastronomía y
@@ -31,6 +36,7 @@ const AcercaContainer = () => {
             </div>
           </div>
         </div>
+
         <div className="acerca_items-info">
           <div className="item_acerca-info">
             <div className="item_acerca-text">
@@ -50,6 +56,7 @@ const AcercaContainer = () => {
             <img src="../../src/img/acerca_imagenes/cafe.png" alt="" />
           </div>
         </div>
+
       </div>
     </div>
   );

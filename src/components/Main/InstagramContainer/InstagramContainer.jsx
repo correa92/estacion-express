@@ -37,22 +37,26 @@ const InstagramContainer = () => {
               <h2>SEGUINOS EN NUESTRA CUENTA DE INSTAGRAM</h2>
             </div>
             <div className="instagram_tier_down">
+
               <div className="instagram_logo">
                 <InstagramIcon fontSize="large" sx={{ color: "white" }} />
               </div>
+
               <div className="instagram_subtitle">
                 <h3>estacion.expresss</h3>
               </div>
+
             </div>
           </div>
 
           <div className="instagram_body">
+
             <div className="instagram_cards">
               {publications.map((card) => (
                 <div id={card.id} key={card.id} className="instagram_card">
-                  <a href={card.permalink}>
+                  <a href={card.permalink} target="_blank" rel="noreferrer">
                     {" "}
-                    <img src={card.media_url} alt="" />
+                    <img src={card.media_url} alt="estación express instagram" />
                   </a>
                 </div>
               ))}

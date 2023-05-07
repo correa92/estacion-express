@@ -1,10 +1,3 @@
-.instagram_container {
-  background-color: var(--color-white);
-  display: relative;
-  margin: 0 auto;
-  width: 100%;
-}
-
 .instagram_items {
   display: flex;
   flex-direction: column;
@@ -15,21 +8,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 300px;
   background-color: var(--color-black);
 }
 
-.instagram_title {
-  padding: 0;
-}
-
 .instagram_title h2 {
-  font-size: 64px !important;
+  text-align: center;
+  font-size: 3rem;
   font-family: var(--font-title);
   font-weight: 400;
   color: var(--color-orange);
-  padding: 0;
+  padding: 1rem;
+  margin: 0;
 }
 
 .instagram_subtitle {
@@ -45,40 +34,62 @@
   align-items: center;
   display: flex;
 }
-
+.instagram_body {
+  padding: 3rem 0 3rem 0;
+}
 .instagram_subtitle h3 {
   font-family: var(--font-subtitle);
   color: var(--color-white);
   font-weight: 200;
-  font-size: 30px !important;
-}
-
-.instagram_body {
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  font-size: 30px;
 }
 
 .instagram_cards {
-  padding: 5rem;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  display: flex;
   flex-wrap: wrap;
-  max-width: 1480px;
-}
-
-.instagram_card {
-  padding: 0.25rem;
-  display: flex;
-}
-
-.instagram_card a img:hover {
-  transition: (.5s .10s);
-  scale: (2)
 }
 
 .instagram_card a img {
-  padding: 0.25rem;
   height: 350px;
+}
+
+@media (min-width: 720px) {
+  .instagram_card a img {
+    padding: 0.8rem;
+  }
+
+  .instagram_header {
+    height: 300px;
+    margin: 0;
+  }
+
+  .instagram_title h2 {
+    padding: 5rem 0 0 0;
+    font-size: 64px;
+  }
+
+  .instagram_subtitle h3 {
+    font-weight: 200;
+    font-size: 35px;
+    margin: 0;
+  }
+
+  .instagram_body {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+  }
+
+  .instagram_cards {
+    max-width: 1200px;
+  }
+
+  .instagram_card  img:hover {
+    -webkit-box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.8);
+
+    transform: scale(1.01);
+  }
 }
