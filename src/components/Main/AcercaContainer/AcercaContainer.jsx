@@ -7,7 +7,7 @@ const AcercaContainer = () => {
         <div className="acerca_items">
           <div className="item_acerca item_acerca_img">
             <img
-              src="../../src/img/acerca_imagenes/WhatsApp Image 2023-05-01 at 19.47.09.jpeg"
+              src="../../src/img/acerca_imagenes/team.jpeg"
               alt="equipo estación express"
               title="equipo estación express"
             />
