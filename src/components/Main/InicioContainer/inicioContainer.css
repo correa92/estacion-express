@@ -1,5 +1,6 @@
 .container_inicio {
-  background-color: var(--color-black);
+  background: url("../../../img/background/onda.png");
+  background-size: cover;
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr;
@@ -10,13 +11,13 @@
   justify-content: center;
 }
 
-.container_title-items{
-  padding-top: 0rem;  
+.container_title-items {
+  padding-top: 0rem;
 }
 
 .container_title-items h3 {
   font-family: var(--font-subtitle);
-  color: #fff;
+  color: var(--color-black);
   font-weight: 500;
   font-size: 35px;
   margin: 0;
@@ -26,23 +27,46 @@
   font-family: var(--font-subtitle);
   font-size: 1.5rem;
   padding-bottom: 0.8rem;
-  color: var(--color-orange);
+  color: var(--color-black);
   font-weight: 500;
   margin: 0;
   text-align: left;
 }
 
 .container_img {
-  background-color: var(--color-black);
   display: grid;
   place-items: center;
- 
+  padding-top: 2rem;
 }
 .container_img picture {
   width: 70%;
 }
 .container_img img {
   width: 100%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+#img_main {
+  -webkit-animation: 300s rotate linear infinite;
+  animation: 300s rotate linear infinite;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
 }
 
 @media (min-width: 1200px) {
@@ -61,7 +85,7 @@
     left: 100%;
   }
 
-  .container_title-items{
+  .container_title-items {
     padding-top: 15rem;
   }
   .container_img picture {

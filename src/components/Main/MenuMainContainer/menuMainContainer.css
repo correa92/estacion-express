@@ -1,7 +1,8 @@
 .containerMenuMain {
-  background: url("https://firebasestorage.googleapis.com/v0/b/estacion-express.appspot.com/o/background%2Ftexture-1027806_1920.jpg?alt=media&token=86478ca0-4e31-4c6a-8d0d-da82c83ef413");
+  background: url("../../../img/background/onda 2.png");
+  height: 100vh;
   background-size: cover;
-  padding-top: 1rem;
+  padding: 1rem 0rem;
 }
 
 .containerMenuMain h2 {

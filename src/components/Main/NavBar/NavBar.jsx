@@ -97,7 +97,7 @@ function NavBar(props) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ boxShadow: "0 0 0" }}>
-        <Toolbar sx={{ background: "#1f1f1f", paddingTop: "1.5rem" }}>
+        <Toolbar sx={{ background: "#1f1f1f", padding: { sm: "1rem" } }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"

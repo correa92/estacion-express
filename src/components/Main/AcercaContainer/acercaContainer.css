@@ -9,6 +9,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+.item_acerca_img img{
+  border-radius: 4rem;
+}
 
 .acerca_items {
   display: grid;

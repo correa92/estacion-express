@@ -5,15 +5,16 @@ import { db } from "../../../fbConfig";
 import Spinner from "../../Spinner/Spinner";
 import { Button } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import ensalada from "../../../img/background/ensalada.png"
 
 const buttonStyle = {
   "&:hover": {
     background: "#FE6A2C",
     transition: ".5s .10s",
-    scale: "1.02",
-    boxShadow: "0px 18px 27px -7px rgba(0,0,0,0.75)",
+    scale: "1.05",
+    boxShadow: "0px 10px 27px -7px rgba(0,0,0,0.75)",
   },
-  background: "#04d94f",
+  background: "#FE6A2C",
   borderRadius: "5rem",
   fontFamily: "Montserrat",
   padding: ".5rem 2rem",
@@ -36,10 +37,10 @@ export default function InicioContainer() {
             return document;
           });
           setItems(eventos);
-          //   setEmpty(false);
+
         } else {
           setLoading(false);
-          //   setEmpty(true);
+
         }
       })
       .catch((e) => console.log(e));
@@ -52,10 +53,11 @@ export default function InicioContainer() {
         <Spinner />
       ) : (
         <div className="container_inicio" id="home">
+
           <div className="container_img">
             <picture>
-              <img
-                src={items[0].link_logo}
+              <img id="img_main"
+                src={ensalada}
                 loading="lazy"
                 alt={items[0].name}
               />

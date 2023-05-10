@@ -35,7 +35,7 @@ export default function MenuMain({ list }) {
       show={columnCard}
       slide={1}
       transition={1}
-      // swiping={true}
+
       responsive={true}
       dynamic={true}
       rightArrow={<Buttom direction="rigth"/>}

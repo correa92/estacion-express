@@ -1,16 +1,21 @@
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import "./buttom.css"
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+
+import "./buttom.css";
 
 const color = {
-    color: "var(--color-black)"
-}
+  color: "#444",
+};
 
-export default function Buttom({direction}) {
+export default function Buttom({ direction }) {
   return (
-    <div className='containerButtom'>
-      {direction ==="left" ? <ArrowCircleLeftIcon fontSize='large' sx={color} /> : <ArrowCircleRightIcon fontSize='large' sx={color}/>}
+    <div className="containerButtom">
+      {direction === "left" ? (
+        <KeyboardArrowLeftIcon fontSize="large" sx={color} />
+      ) : (
+        <KeyboardArrowRightIcon fontSize="large" sx={color} />
+      )}
     </div>
-  )
+  );
 }
