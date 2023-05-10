@@ -4,6 +4,7 @@ import NavBar from "./NavBar/NavBar";
 import AcercaContainer from "./AcercaContainer/AcercaContainer";
 import InstagramContainer from "./InstagramContainer/InstagramContainer";
 import FooterContainer from "./FooterContainer/FooterContainer";
+import Categories from "./Categories/Categories";
 
 export default function Main() {
   return (
@@ -17,6 +18,9 @@ export default function Main() {
         </section>
         <section>
           <AcercaContainer />
+        </section>
+        <section>
+          <Categories/>
         </section>
         <section>
           <MenuMainContainer />

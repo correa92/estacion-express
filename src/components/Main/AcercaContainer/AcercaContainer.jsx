@@ -1,4 +1,6 @@
 import "./acercaContainer.css";
+import imgTeam from "../../../img/acerca_imagenes/team.jpeg";
+import imgCafe from "../../../img/acerca_imagenes/cafe.png";
 
 const AcercaContainer = () => {
   return (
@@ -7,7 +9,7 @@ const AcercaContainer = () => {
         <div className="acerca_items">
           <div className="item_acerca item_acerca_img">
             <img
-              src="../../src/img/acerca_imagenes/team.jpeg"
+              src={imgTeam}
               alt="equipo estación express"
               title="equipo estación express"
             />
@@ -53,7 +55,7 @@ const AcercaContainer = () => {
             </div>
           </div>
           <div className="item_acerca-info-img">
-            <img src="../../src/img/acerca_imagenes/cafe.png" alt="" />
+            <img src={imgCafe} alt="cafe.png" />
           </div>
         </div>
       </div>
