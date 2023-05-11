@@ -11,3 +11,7 @@
   --color-white: #FFFFFF;
   --color-background-info: #FFE2D4;
 }
+
+html {
+  scroll-behavior:smooth;
+}
