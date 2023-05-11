@@ -5,7 +5,7 @@ import { db } from "../../../fbConfig";
 import Spinner from "../../Spinner/Spinner";
 import { Button } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import ensalada from "../../../img/background/ensalada.png"
+import ensalada from "../../../img/background/ensalada.png";
 
 const buttonStyle = {
   "&:hover": {
@@ -37,10 +37,8 @@ export default function InicioContainer() {
             return document;
           });
           setItems(eventos);
-
         } else {
           setLoading(false);
-
         }
       })
       .catch((e) => console.log(e));
@@ -53,10 +51,10 @@ export default function InicioContainer() {
         <Spinner />
       ) : (
         <div className="container_inicio" id="home">
-
           <div className="container_img">
             <picture>
-              <img id="img_main"
+              <img
+                id="img_main"
                 src={ensalada}
                 loading="lazy"
                 alt={items[0].name}
@@ -64,10 +62,7 @@ export default function InicioContainer() {
             </picture>
           </div>
 
-          <div
-            className="container_title"
-            data-aos="zoom-out-up"
-          >
+          <div className="container_title" data-aos="zoom-out-up">
             <div className="container_title-items">
               <h3>HACE TU PEDIDO</h3>
               <h4>Take a way - Delivery</h4>

@@ -11,10 +11,6 @@
   justify-content: center;
 }
 
-.container_title-items {
-  padding-top: 0rem;
-}
-
 .container_title-items h3 {
   font-family: var(--font-subtitle);
   color: var(--color-black);
@@ -78,16 +74,18 @@
     position: relative;
     width: 100%;
   }
-  .container_inicio div:nth-of-type(2) {
-    left: -150%;
-  }
-  .container_inicio div:nth-of-type(1) {
-    left: 100%;
+
+  .container_img{
+    grid-column-start: 2;
+    grid-column-end: 3;
   }
 
-  .container_title-items {
-    padding-top: 15rem;
+  .container_title{
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
+
+
   .container_img picture {
     width: 55%;
   }

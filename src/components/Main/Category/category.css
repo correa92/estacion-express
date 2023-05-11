@@ -1,0 +1,57 @@
+
+.containerCardCategory {
+  background-color: #fff;
+  margin: 1rem;
+  border-radius: 3rem;
+  position: relative;
+  transition: all .3s ease-in-out;
+}
+.containerCardCategory:hover {
+  transform: scale(1.05);
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.8);
+}
+
+.containerCardCategory-img {
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+}
+
+.containerCardCategory-img img {
+  object-fit: cover;
+  border-radius: 3rem;
+  width: 100%;
+  height: auto;
+}
+.containerTextCategory h4 {
+  position: absolute;
+  color: #232;
+  background: #fff;
+  font-family: var(--font-title);
+  font-size: 2rem;
+  margin: 0;
+  right: 0;
+  top: 2rem;
+  padding: .5rem 2rem;
+  border-radius: 1rem 0 0 1rem;
+}
+
+
+@media (min-width: 720px) {
+  .containerCardCategory {
+    margin: 10rem 1rem 10rem 1rem;
+    max-width: 30rem ;
+
+    
+  }
+  .containerTextCategory h4 {
+    font-weight: 400;
+    font-size:3rem;
+  }
+  .containerCardCategory-img {
+    height: 30rem;
+  }
+
+}

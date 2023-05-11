@@ -22,6 +22,7 @@
 .acerca_items-info {
   background-color: var(--color-background-info);
   display: flex;
+  width: 100%;
 }
 
 .item_acerca-info {
@@ -40,7 +41,7 @@
 .item_acerca-info-img img {
   display: none;
   width: auto;
-  height: 400px;
+  height: 10%;
 }
 
 .item_acerca {
@@ -89,7 +90,7 @@
   font-weight: 500;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 1200px) {
   .acerca_items {
     grid-template-columns: 1fr 1fr;
     padding: 2rem 0 1.5rem 0;
@@ -130,6 +131,7 @@
     top: -80px;
     display: flex;
     margin: 0;
-    height: 400px;
+    min-height: 300px;
+    max-height: 400px;
   }
 }

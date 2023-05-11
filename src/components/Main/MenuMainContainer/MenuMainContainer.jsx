@@ -76,35 +76,35 @@ export default function MenuMainContainer() {
       ) : (
         <>
           <div className="containerMenuMain" id="menu">
-            <h2>Panificados / Cafetería</h2>
+            <h2 >Panificados / Cafetería</h2>
             <div className="containerMenu">
               <MenuMain list={panificadosCafeteria} />
             </div>
           </div>
 
           <div className="containerMenuMain">
-            <h2>Bebídas / Jugos Frutales</h2>
+            <h2 id="category2">Bebídas / Jugos Frutales</h2>
             <div className="containerMenu">
               <MenuMain list={bebidasJugosFrutales} />
             </div>
           </div>
 
           <div className="containerMenuMain">
-            <h2>Lácteos / Postres</h2>
+            <h2 id="category3">Lácteos / Postres</h2>
             <div className="containerMenu">
               <MenuMain list={lacteosPostres} />
             </div>
           </div>
 
           <div className="containerMenuMain">
-            <h2>Comidas / Snaks</h2>
+            <h2 id="category4">Viandas / Snaks</h2>
             <div className="containerMenu">
               <MenuMain list={comidasSnaks} />
             </div>
           </div>
 
           <div className="containerMenuMain">
-            <h2>Sandwichs / Ensaladas</h2>
+            <h2 id="category5">Sandwichs / Ensaladas</h2>
             <div className="containerMenu">
               <MenuMain list={ensaladasSandwich} />
             </div>
