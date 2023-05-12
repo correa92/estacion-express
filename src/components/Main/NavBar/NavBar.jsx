@@ -1,4 +1,3 @@
-import * as React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -14,6 +13,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { useEffect, useState } from "react";
+import { collection, getDocs, query } from "firebase/firestore";
+import { db } from "../../../fbConfig";
+import { Avatar } from "@mui/material";
 
 const drawerWidth = 250;
 const navItems = [
@@ -54,7 +57,31 @@ const buttonStyleResponsive = {
 
 function NavBar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const [loading, setLoading] = useState(true);
+  const [items, setItems] = useState([]);
+  const [empty, setEmpty] = useState(true);
+
+  useEffect(() => {
+    const filtro = query(collection(db, "info"));
+    getDocs(filtro)
+      .then((doc) => {
+        if (!doc.empty) {
+          const eventos = doc.docs.map((documento) => {
+            const document = { ...documento.data() };
+            setLoading(false);
+            return document;
+          });
+          setItems(eventos);
+          setEmpty(false);
+        } else {
+          setLoading(false);
+          setEmpty(true);
+        }
+      })
+      .catch((e) => console.log(e));
+  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -74,9 +101,9 @@ function NavBar(props) {
           fontSize: "1.2rem",
         }}
       >
-        ESTACIÓN Express
+        {items[0]?.name}
       </Typography>
-
+ 
       <Divider sx={{ background: "#FE6A2C" }} />
       <List>
         {navItems.map((item) => (
@@ -108,6 +135,7 @@ function NavBar(props) {
             <MenuIcon />
           </IconButton>
 
+
           <Typography
             variant="h6"
             component="div"
@@ -122,7 +150,7 @@ function NavBar(props) {
               },
             }}
           >
-            ESTACIÓN Express
+            {items[0]?.name}
           </Typography>
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>

@@ -14,6 +14,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import ProductsContainer from "./components/ProductsContainer/ProductsContainer";
 import NewProduct from "./components/NewProduct/NewProduct";
 import FormEditProduct from "./components/FormEditProduct/FormEditProduct";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Aos from "aos";
 import Main from "./components/Main/Main";
 
@@ -29,80 +30,97 @@ function App() {
               <Routes>
                 <Route path="/" element={<Main />}></Route>
 
-                <Route path="/admin" element={<AdminContainer />} />
+                <Route
+                  path="/admin"
+                  element={
+                    <ProtectedRoute>
+                      <AdminContainer />
+                    </ProtectedRoute>
+                  }
+                />
                 <Route path="/login" element={<Login />} />
                 <Route
                   path="/admin/products"
                   element={
-                    <AdminContainer>
-                      <ProductsContainer />
-                    </AdminContainer>
+                    <ProtectedRoute>
+                      <AdminContainer>
+                        <ProductsContainer />
+                      </AdminContainer>
+                    </ProtectedRoute>
                   }
                 ></Route>
                 <Route
                   path="/admin/products/new_product"
                   element={
-                    <AdminContainer>
-                      <NewProduct />
-                    </AdminContainer>
+                    <ProtectedRoute>
+                      <AdminContainer>
+                        <NewProduct />
+                      </AdminContainer>
+                    </ProtectedRoute>
                   }
                 ></Route>
                 <Route
                   path="/admin/products/product_edit/:idProduct"
                   element={
-                    <AdminContainer>
-                      <FormEditProduct />
-                    </AdminContainer>
+                    <ProtectedRoute>
+                      <AdminContainer>
+                        <FormEditProduct />
+                      </AdminContainer>
+                    </ProtectedRoute>
                   }
                 ></Route>
                 <Route
                   path="/admin/administrators"
                   element={
-                    <AdminContainer>
-                      <AdministratorsContainer />
-                    </AdminContainer>
+                    <ProtectedRoute>
+                      <AdminContainer>
+                        <AdministratorsContainer />
+                      </AdminContainer>
+                    </ProtectedRoute>
                   }
                 ></Route>
 
                 <Route
                   path="/admin/administrators/user_edit/:idUser"
                   element={
-                    <AdminContainer>
-                      <FormEditUser />
-                    </AdminContainer>
+                    <ProtectedRoute>
+                      <AdminContainer>
+                        <FormEditUser />
+                      </AdminContainer>
+                    </ProtectedRoute>
                   }
                 ></Route>
                 <Route
                   path="/admin/establishment"
                   element={
-                    <AdminContainer>
-                      <InfoContainer />
-                    </AdminContainer>
+                    <ProtectedRoute>
+                      <AdminContainer>
+                        <InfoContainer />
+                      </AdminContainer>
+                    </ProtectedRoute>
                   }
                 ></Route>
                 <Route
                   path="/admin/establishment_edit"
                   element={
-                    <AdminContainer>
-                      <FormEditInfo />
-                    </AdminContainer>
+                    <ProtectedRoute>
+                      <AdminContainer>
+                        <FormEditInfo />
+                      </AdminContainer>
+                    </ProtectedRoute>
                   }
                 ></Route>
-                <Route
+                {/* <Route
                   path="/register"
                   element={
                     <AdminContainer>
                       <Register />
                     </AdminContainer>
                   }
-                ></Route>
+                ></Route> */}
                 <Route
                   path="/reset-password"
-                  element={
-                    <AdminContainer>
-                      <ResetPassword />
-                    </AdminContainer>
-                  }
+                  element={<ResetPassword />}
                 ></Route>
 
                 <Route path="*" element={<h1>404 Not Found ;(</h1>} />

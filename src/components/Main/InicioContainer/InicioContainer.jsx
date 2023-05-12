@@ -24,7 +24,6 @@ const buttonStyle = {
 export default function InicioContainer() {
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
-  //   const [empty, setEmpty] = useState(true);
 
   useEffect(() => {
     const filtro = query(collection(db, "info"));
@@ -52,14 +51,30 @@ export default function InicioContainer() {
       ) : (
         <div className="container_inicio" id="home">
           <div className="container_img">
-            <picture>
-              <img
-                id="img_main"
-                src={ensalada}
-                loading="lazy"
-                alt={items[0].name}
-              />
-            </picture>
+            <div className="carta-box">
+              <div className="carta">
+                <div className=" cara">
+                  <picture>
+                    <img
+                    id="img_logo"
+                      src={items[0].link_logo}
+                      loading="lazy"
+                      alt={items[0].name}
+                    />
+                  </picture>
+                </div>
+                <div className=" cara detras">
+                  <picture>
+                    <img
+                      id="img_main"
+                      src={ensalada}
+                      loading="lazy"
+                      alt={items[0].name}
+                    />
+                  </picture>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="container_title" data-aos="zoom-out-up">
@@ -68,7 +83,7 @@ export default function InicioContainer() {
               <h4>Take a way - Delivery</h4>
               <Button
                 variant="contained"
-                href={`https://api.whatsapp.com/send/?phone=549${items[0].movil}&text=¡Hola! Queria realizar un pedido a nombre de...&type=phone_number&app_absent=0`}
+                href={`https://api.whatsapp.com/send/?phone=549${items[0].movil}&text=${items[0].message_whatsapp}&type=phone_number&app_absent=0`}
                 endIcon={<WhatsAppIcon />}
                 sx={buttonStyle}
               >

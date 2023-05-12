@@ -75,6 +75,7 @@ export default function FormEditInfo() {
 
   const handleChange = ({ target: { name, value } }) => {
     const nextInfo = { ...event, [name]: value };
+    console.log(nextInfo);
     setEvent(nextInfo);
   };
 
@@ -144,6 +145,7 @@ export default function FormEditInfo() {
         handleNotistack("Error al actualizar los datos", "error");
       });
   };
+  console.log(event);
   return (
     <>
       {loading ? (
@@ -199,6 +201,46 @@ export default function FormEditInfo() {
                   name="birthplace"
                   type="text"
                   value={event.birthplace}
+                  onChange={handleChange}
+                />
+                <TextField
+                  id="instagram"
+                  label="URL Instagram"
+                  name="instagram"
+                  type="url"
+                  value={event.instagram}
+                  onChange={handleChange}
+                />
+                <TextField
+                  id="movil"
+                  label="Teléfono"
+                  name="movil"
+                  type="num"
+                  value={event.movil}
+                  onChange={handleChange}
+                />
+                <TextField
+                  id="message_whatsapp"
+                  label="Mensaje"
+                  name="message_whatsapp"
+                  type="text"
+                  multiline={true}
+                  minRows={1}
+                  maxRows={4}
+                  value={event.message_whatsapp}
+                  onChange={handleChange}
+                />
+
+                <TextField
+                  id="dayAndHour"
+                  label="Días y Horarios"
+                  
+                  name="dayAndHour"
+                  type="text"
+                  multiline={true}
+                  minRows={1}
+                  maxRows={4}
+                  value={event.dayAndHour}
                   onChange={handleChange}
                 />
               </Stack>

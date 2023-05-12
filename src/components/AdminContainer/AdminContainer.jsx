@@ -16,15 +16,12 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useState } from "react";
-import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined';
-import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
-import FastfoodOutlinedIcon from '@mui/icons-material/FastfoodOutlined';
-import StorefrontIcon from '@mui/icons-material/Storefront';
-import LocalCafeOutlinedIcon from '@mui/icons-material/LocalCafeOutlined';
-import InstagramIcon from "@mui/icons-material/Instagram";
+import StorefrontIcon from "@mui/icons-material/Storefront";
+import LocalCafeOutlinedIcon from "@mui/icons-material/LocalCafeOutlined";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
+import ImgOnda from "../../img/background/ondaCeleste.png";
 
 const drawerWidth = 240;
 
@@ -93,7 +90,6 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export default function AdminContainer({ children }) {
-  
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const { logOut } = useAuth();
@@ -120,9 +116,16 @@ export default function AdminContainer({ children }) {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box
+      sx={{
+        background: `url(${ImgOnda})`,
+        backgroundSize: "cover",
+        display: "flex",
+        height: "100vh",
+      }}
+    >
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open}  >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -130,7 +133,7 @@ export default function AdminContainer({ children }) {
             onClick={handleDrawerOpen}
             edge="start"
             sx={{
-              marginRight: 5, 
+              marginRight: 5,
               ...(open && { display: "none" }),
             }}
           >
@@ -142,7 +145,7 @@ export default function AdminContainer({ children }) {
         </Toolbar>
       </AppBar>
 
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
@@ -154,25 +157,7 @@ export default function AdminContainer({ children }) {
         </DrawerHeader>
         <Divider />
 
-        <List>
-          {/* <ListItem
-            key="Promociones"
-            disablePadding
-            sx={{ display: "block" }}
-            onClick={() => {
-              navigate("/admin/promotions");
-            }}
-          >
-            <ListItemButton sx={itemButton}>
-              <ListItemIcon sx={iconosCss}>
-                <FastfoodOutlinedIcon />
-              </ListItemIcon>
-              <ListItemText
-                primary="Promociones"
-                sx={{ opacity: open ? 1 : 0 }}
-              />
-            </ListItemButton>
-          </ListItem> */}
+        <List >
           <ListItem
             key="Productos"
             disablePadding
@@ -193,10 +178,8 @@ export default function AdminContainer({ children }) {
           </ListItem>
         </List>
 
-        <Divider />
-
         <List>
-          <ListItem
+          {/* <ListItem
             key="Administradores"
             disablePadding
             sx={{ display: "block" }}
@@ -213,7 +196,7 @@ export default function AdminContainer({ children }) {
                 sx={{ opacity: open ? 1 : 0 }}
               />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
           <ListItem
             key="establecimiento"
             disablePadding
@@ -232,26 +215,8 @@ export default function AdminContainer({ children }) {
               />
             </ListItemButton>
           </ListItem>
-
-          <ListItem
-            key="Redes Sociales"
-            disablePadding
-            sx={{ display: "block" }}
-            onClick={() => {
-              navigate("/admin/social_networks");
-            }}
-          >
-            <ListItemButton sx={itemButton}>
-              <ListItemIcon sx={iconosCss}>
-                <InstagramIcon />
-              </ListItemIcon>
-              <ListItemText
-                primary="Redes Sociales"
-                sx={{ opacity: open ? 1 : 0 }}
-              />
-            </ListItemButton>
-          </ListItem>
         </List>
+        
         <Divider />
         <List>
           <ListItem
@@ -273,7 +238,7 @@ export default function AdminContainer({ children }) {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
+        <DrawerHeader  />
         {children}
       </Box>
     </Box>

@@ -130,6 +130,9 @@ export default function Login() {
             <Button variant="contained" type="submit">
               entrar
             </Button>
+            <Button variant="contained" href="/">
+              ir al home
+            </Button>
             {/* <Button
               onClick={handleGoogleSignin}
               variant="contained"

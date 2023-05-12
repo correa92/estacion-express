@@ -15,7 +15,7 @@ const styleCard = {
     "scale":"1.01",
     "boxShadow": "0px 18px 27px -7px rgba(0,0,0,0.75)"
   },
-  maxWidth: "50rem",
+  maxWidth: "70rem",
   m: "1rem",
 }; 
 export default function Info({ infoData }) {
@@ -28,14 +28,14 @@ export default function Info({ infoData }) {
         <Grid item xs={12} md={6}>
           <CardMedia
             component="img"
-            sx={{ maxHeight: "25rem", minWidth: "15rem" }}
+            sx={{ maxHeight: "25rem", background:"#04d94f"}}
             image={infoData[0].link_logo !== "" ? infoData[0].link_logo : imgND}
             alt={infoData[0].name}
           />
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <CardContent>
+          <CardContent sx={{width:"100%"}}>
             <Typography gutterBottom variant="body1" component="div">
               {<strong>Nombre:</strong>} {infoData[0].name}
             </Typography>
@@ -53,6 +53,18 @@ export default function Info({ infoData }) {
               {infoData[0].birthplace === ""
                 ? "Sin definir"
                 : ` ${infoData[0].birthplace}`}
+            </Typography>
+            <Typography gutterBottom variant="body1" component="div">
+              {<strong>Días y Horas de apertura: </strong>}{infoData[0].dayAndHour}
+            </Typography>
+            <Typography gutterBottom variant="body1" component="div">
+              {<strong>URL Instagram: </strong>}{infoData[0].instagram}
+            </Typography>
+            <Typography gutterBottom variant="body1" component="div">
+              {<strong>Teléfono: </strong>}{infoData[0].movil}
+            </Typography>
+            <Typography gutterBottom variant="body1" component="div">
+              {<strong>Mensaje de whatsapp: </strong>}{infoData[0].message_whatsapp}
             </Typography>
           </CardContent>
           <CardActions sx={{ display: "flex", justifyContent: "center" }}>

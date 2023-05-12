@@ -20,6 +20,7 @@ const InstagramContainer = () => {
         setPublications(r.data);
       })
       .catch((err) => {
+
         console.log(err);
       })
       .finally(() => setLoading(false));
@@ -48,7 +49,7 @@ const InstagramContainer = () => {
 
           <div className="instagram_body">
             <div className="instagram_cards">
-              {publications.map((card) => (
+              {publications?.map((card) => (
                 <div id={card.id} key={card.id} className="instagram_card" data-aos="zoom-in">
                   <a href={card.permalink} target="_blank" rel="noreferrer">
                     {" "}
