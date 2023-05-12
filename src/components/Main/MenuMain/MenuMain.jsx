@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Buttom from "../Buttom/Buttom";
 
 export default function MenuMain({ list }) {
-  const [columnCard, setColumnCard] = useState(window.innerWidth < 720 ? 1 : 3);
+  const [columnCard, setColumnCard] = useState(window.innerWidth < 720 ? 1 : 4);
 
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -25,8 +25,10 @@ export default function MenuMain({ list }) {
       setColumnCard(1);
     } else if (width < 1000) {
       setColumnCard(2);
-    } else {
+    } else if (width < 1200) {
       setColumnCard(3);
+    } else {
+      setColumnCard(4);
     }
   }, [width]);
 
@@ -35,11 +37,10 @@ export default function MenuMain({ list }) {
       show={columnCard}
       slide={1}
       transition={1}
-
       responsive={true}
       dynamic={true}
-      rightArrow={<Buttom direction="rigth"/>}
-      leftArrow={<Buttom direction="left"/>}
+      rightArrow={<Buttom direction="rigth" />}
+      leftArrow={<Buttom direction="left" />}
     >
       {list.map((product) => {
         return (

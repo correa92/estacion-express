@@ -183,6 +183,7 @@ export default function NewProduct() {
             bgcolor: "#fff",
             borderRadius: ".5rem",
             maxWidth: "30rem",
+            padding:"1rem 0"
           }}
           data-aos="fade-right"
           data-aos-easing="linear"
