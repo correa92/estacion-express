@@ -9,8 +9,8 @@
 .carta-box {
   position: relative;
   perspective: 1000px;
-  width: 300px;
-  height: 300px;
+  width: 220px;
+  height: 220px;
 }
 
 .carta-box:hover .carta {
@@ -38,7 +38,9 @@
   display: flex;
   justify-content: center;
 }
-
+.container_title-items{
+  padding: 1rem;
+}
 .container_title-items h3 {
   font-family: var(--font-subtitle);
   color: var(--color-black);
@@ -56,11 +58,20 @@
   margin: 0;
   text-align: left;
 }
+.container_title-items h5 {
+  font-family: var(--font-subtitle);
+  font-size: 1.5rem;
+  padding-bottom: 0.8rem;
+  color: var(--color-black);
+  font-weight: 400;
+  margin: 0;
+  text-align: left;
+}
 
 .container_img {
   display: grid;
   place-items: center;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 #img_logo{
   background: var(--color-black);
@@ -113,6 +124,10 @@
     height: 500px;
   }
 
+  .container_title-items{
+    padding: 2rem;
+  }
+
   .container_title-items h3 {
     font-family: var(--font-title);
     font-weight: 400;
@@ -122,5 +137,10 @@
   .container_title-items h4 {
     font-size: 2.5rem;
     padding-bottom: 1.5rem;
+  }
+  .container_title-items h5 {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    width: 30rem;
   }
 }

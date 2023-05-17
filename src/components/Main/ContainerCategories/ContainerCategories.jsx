@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Categories from "../Categories/Categories";
 import "./containerCategories.css";
-import cat1 from "../../../img/categories/cat1.jpg";
+import cat1 from "../../../img/categories/cat1.png";
 import cat2 from "../../../img/categories/cat2.jpg";
 import cat3 from "../../../img/categories/cat3.jpg";
 import cat4 from "../../../img/categories/cat4.jpg";

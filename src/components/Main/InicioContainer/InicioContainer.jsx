@@ -56,7 +56,7 @@ export default function InicioContainer() {
                 <div className=" cara">
                   <picture>
                     <img
-                    id="img_logo"
+                      id="img_logo"
                       src={items[0].link_logo}
                       loading="lazy"
                       alt={items[0].name}
@@ -81,6 +81,7 @@ export default function InicioContainer() {
             <div className="container_title-items">
               <h3>HACE TU PEDIDO</h3>
               <h4>Take a way - Delivery</h4>
+              <h5>Disfrutá todas las propuestas que tenemos para vos.</h5>
               <Button
                 variant="contained"
                 href={`https://api.whatsapp.com/send/?phone=549${items[0].movil}&text=${items[0].message_whatsapp}&type=phone_number&app_absent=0`}

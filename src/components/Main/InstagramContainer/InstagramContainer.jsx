@@ -8,7 +8,7 @@ const InstagramContainer = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const url = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption,permalink,thumbnail_url,timestamp,username&limit=6&access_token=${
+    const url = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption,permalink,thumbnail_url,timestamp,username&limit=3&access_token=${
       import.meta.env.VITE_INSTAGRAM_TOKEN
     }`;
     fetch(url)

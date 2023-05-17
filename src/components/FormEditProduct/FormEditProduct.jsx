@@ -202,6 +202,7 @@ export default function FormEditProduct() {
             bgcolor: "#fff",
             borderRadius: ".5rem",
             maxWidth: "100%",
+            padding: { xs: "1rem", sm: "2rem" },
           }}
           data-aos="fade-right"
           data-aos-easing="linear"
