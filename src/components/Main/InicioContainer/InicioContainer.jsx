@@ -5,7 +5,7 @@ import { db } from "../../../fbConfig";
 import Spinner from "../../Spinner/Spinner";
 import { Button } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import ensalada from "../../../img/background/ensalada.png";
+import cafe from "../../../img/background/IMAG 1.png";
 
 const buttonStyle = {
   "&:hover": {
@@ -54,7 +54,7 @@ export default function InicioContainer() {
             <div className="carta-box">
               <div className="carta">
                 <div className=" cara">
-                  <picture>
+                <picture>
                     <img
                       id="img_logo"
                       src={items[0].link_logo}
@@ -62,12 +62,13 @@ export default function InicioContainer() {
                       alt={items[0].name}
                     />
                   </picture>
+
                 </div>
                 <div className=" cara detras">
-                  <picture>
+                <picture>
                     <img
                       id="img_main"
-                      src={ensalada}
+                      src={cafe}
                       loading="lazy"
                       alt={items[0].name}
                     />
