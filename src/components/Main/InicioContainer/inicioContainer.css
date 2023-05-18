@@ -9,8 +9,8 @@
 .carta-box {
   position: relative;
   perspective: 1000px;
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
 }
 
 .carta-box:hover .carta {
@@ -71,14 +71,14 @@
 .container_img {
   display: grid;
   place-items: center;
-  padding-top: 3rem;
+  padding-top: 4rem;
 }
 #img_logo{
   background: var(--color-black);
   border-radius: 50%;
 }
 
-@keyframes rotate {
+/* @keyframes rotate {
   from {
     transform: rotate(0deg);
   }
@@ -93,7 +93,7 @@
   to {
     -webkit-transform: rotate(360deg);
   }
-}
+} */
 
 #img_main {
   -webkit-animation: 300s rotate linear infinite;

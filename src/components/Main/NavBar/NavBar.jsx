@@ -131,14 +131,13 @@ function NavBar(props) {
         <AppBar
           component="nav"
           sx={{
-            boxShadow: "0 0 0",
-            background: "url(../../../img/background/onda.png)",
+            boxShadow:"0 0 0",
+            background: "transparent",
             BorderAllRounded: "6px",
             top: "2.5%",
-            
           }}
         >
-          <Container maxWidth="xl" Breakpoint="true">
+          <Container maxWidth="xl" breakpoint="true">
             <Toolbar
               sx={{
                 background: "#1f1f1f",

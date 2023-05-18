@@ -7,6 +7,8 @@ import { Divider, Grid } from "@mui/material";
 
 import imgND from "../../../img/ND.png";
 
+
+
 export default function InstagramCard({ list }) {
 
   return list.map((evento) => {
@@ -16,6 +18,7 @@ export default function InstagramCard({ list }) {
         sx={{ maxWidth: "48rem", m: "1rem" }}
         key={evento.id}
         data-aos="zoom-in"
+        className="instagramCard"
       >
         <Grid container>
           <Grid item xs={12} md={6}>

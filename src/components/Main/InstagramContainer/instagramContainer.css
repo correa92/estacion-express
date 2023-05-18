@@ -53,12 +53,12 @@
 .instagram_card a img {
   height: 350px;
 }
+.instagram_card{
+  margin:2rem 0rem;
+}
 
 @media (min-width: 720px) {
-  .instagram_card a img {
-    padding: 0.8rem;
-  }
-
+ 
   .instagram_header {
     height: 300px;
     margin: 0;
@@ -85,11 +85,18 @@
     max-width: 1200px;
   }
 
-  .instagram_card  img:hover {
-    -webkit-box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.8);
-    -moz-box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.8);
+  .instagram_card{
+    margin: 1rem;
+  }
 
-    transform: scale(1.01);
+  .instagram_card img{
+    transition: all .3s ease-in-out;
+  }
+
+  .instagram_card img:hover {
+    transform: scale(1.05);
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.8);
   }
 }
