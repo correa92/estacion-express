@@ -3,7 +3,6 @@
   background-size: cover;
   padding: 1rem 0rem;
 }
-
 .containerMenuMain h2 {
   color: #fff;
   display: inline;
@@ -29,10 +28,12 @@ h4 {
 @media (min-width: 720px) {
   .containerMenuMain {
     padding-top: 1rem;
+
   }
-  
+
   .containerMenuMain h2 {
     font-size: 1.5rem;
     padding: 1rem 10rem;
   }
+
 }

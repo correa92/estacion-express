@@ -31,7 +31,7 @@ export default function MenuMainContainer() {
                 prod.category == "CAFETERÍA") &&
               prod.post === true
           );
-          
+
           setPanificadosCafeteria(panificados);
 
           const bebidas = productos.filter(
@@ -76,23 +76,9 @@ export default function MenuMainContainer() {
       ) : (
         <>
           <div className="containerMenuMain" id="menu">
-            <h2 >Panificados / Cafetería</h2>
+            <h2>Panificados / Cafetería</h2>
             <div className="containerMenu">
               <MenuMain list={panificadosCafeteria} />
-            </div>
-          </div>
-
-          <div className="containerMenuMain">
-            <h2 id="category2">Bebídas / Jugos Frutales</h2>
-            <div className="containerMenu">
-              <MenuMain list={bebidasJugosFrutales} />
-            </div>
-          </div>
-
-          <div className="containerMenuMain">
-            <h2 id="category3">Lácteos / Postres</h2>
-            <div className="containerMenu">
-              <MenuMain list={lacteosPostres} />
             </div>
           </div>
 
@@ -107,6 +93,20 @@ export default function MenuMainContainer() {
             <h2 id="category5">Sandwichs / Ensaladas</h2>
             <div className="containerMenu">
               <MenuMain list={ensaladasSandwich} />
+            </div>
+          </div>
+
+          <div className="containerMenuMain">
+            <h2 id="category2">Bebídas / Jugos Frutales</h2>
+            <div className="containerMenu">
+              <MenuMain list={bebidasJugosFrutales} />
+            </div>
+          </div>
+
+          <div className="containerMenuMain">
+            <h2 id="category3">Lácteos / Postres</h2>
+            <div className="containerMenu">
+              <MenuMain list={lacteosPostres} />
             </div>
           </div>
         </>

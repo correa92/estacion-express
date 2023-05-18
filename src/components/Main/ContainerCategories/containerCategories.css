@@ -12,9 +12,14 @@
   @media (min-width: 768px) {
     .containerGralCategories {
       font-size: 50px;
+      display: grid;
+      place-content: center;
     }
     .containerGralCategories h3{
       margin-bottom: 0;
+    }
+    .containerCategories{
+      max-width: 1250px;
     }
 
   }

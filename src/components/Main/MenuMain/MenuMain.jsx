@@ -21,9 +21,9 @@ export default function MenuMain({ list }) {
   }, []);
 
   useEffect(() => {
-    if (width < 720) {
+    if (width < 650) {
       setColumnCard(1);
-    } else if (width < 1000) {
+    } else if (width < 950) {
       setColumnCard(2);
     } else if (width < 1200) {
       setColumnCard(3);
