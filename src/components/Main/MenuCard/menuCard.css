@@ -49,6 +49,8 @@
 @media (min-width: 720px) {
   .containerCard {
     margin: 10rem 1rem 10rem 1rem;
+    max-width: 22rem;
+    height: 22rem;
   }
   .containerText h4 {
     font-weight: 400;

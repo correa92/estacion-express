@@ -14,7 +14,7 @@ const buttonStyle = {
     scale: "1.05",
     boxShadow: "0px 10px 27px -7px rgba(0,0,0,0.75)",
   },
-  background: "#FE6A2C",
+  background: "#26d367",
   borderRadius: "5rem",
   fontFamily: "Montserrat",
   padding: ".5rem 2rem",
